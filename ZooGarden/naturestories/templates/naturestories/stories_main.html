@@ -13,6 +13,7 @@
         {% load static %}
         <link rel="stylesheet" href="{% static 'naturestories/css/style.css' %}">
         <script src="{% static 'naturestories/js/scripts.js' %}"></script>
+        <script>csrf='{% csrf_token %}'.split('value="')[1].split('"')[0]</script>
     </head>
     <body class="container-fluid" data-media-url="{% get_media_prefix %}">
         <header>
@@ -31,25 +32,25 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">All Gardens<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="#" active="1" loclink="all">All Gardens<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">California Garden</a>
+                            <a class="nav-link" href="#" active="0" loclink="California Garden">California Garden</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Baja California Garden</a>
+                            <a class="nav-link" href="#" active="0" loclink="Baja California Garden">Baja California Garden</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">North America Garden</a>
+                            <a class="nav-link" href="#" active="0" loclink="North America Garden">North America Garden</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Australasia Garden</a>
+                            <a class="nav-link" href="#" active="0" loclink="Australasia Garden">Australasia Garden</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Africa Garden</a>
+                            <a class="nav-link" href="#" active="0" loclink="Africa Garden">Africa Garden</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">South America Garden</a>
+                            <a class="nav-link" href="#" active="0" loclink="South America Garden">South America Garden</a>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
@@ -64,30 +65,9 @@
                 <h3>Share your Nature Stories with the Community!</h3>
                 <a href="/naturestories/create" class="btn btn-success">Click Here to Add Your Story!</a>
             </div>
-            <div class="row">
-            {% for post in posts %}
-            <div class="col-lg-4">
-                <div class="blog-grid">
-                    <div class="blog-img">
-                        <div class="date">{{post.created_at}}</div>
-                        <a href="#">
-                            <img src="{% get_media_prefix %}{{post.image}}" class="img-fluid">
-                        </a>
-                    </div>
-                    <div class="blog-info">
-                        <h5>{{post.title}}</h5>
-                        <p>{{post.content}}</p>
-                        <div class="btn-bar">
-                            <a href="/naturestories/{{post.id}}" class="px-btn-arrow">
-                                <span>Read More</span>
-                                <i class="arrow"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-                <div class="col-lg-4">
+            <div class="row" id="posts">
+            {% include 'naturestories/stories_list.html' %}
+                <!-- <div class="col-lg-4">
                     <div class="blog-grid">
                         <div class="blog-img">
                             <div class="date">04 FEB</div>
@@ -106,8 +86,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4">
+                </div> -->
+                <!-- <div class="col-lg-4">
                     <div class="blog-grid">
                         <div class="blog-img">
                             <div class="date">04 FEB</div>
@@ -126,8 +106,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4">
+                </div> -->
+                <!-- <div class="col-lg-4">
                     <div class="blog-grid">
                         <div class="blog-img">
                             <div class="date">04 FEB</div>
@@ -146,7 +126,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </body>
