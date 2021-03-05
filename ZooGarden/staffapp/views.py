@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.http import JsonResponse
 from staffapp.models import *
+from SitSpots.models import *
 from .forms import loginForm, tagForm
 from .admin import UserCreationForm
 from django.contrib import messages
