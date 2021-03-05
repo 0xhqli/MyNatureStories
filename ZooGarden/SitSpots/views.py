@@ -41,9 +41,9 @@ def africaGarden(request):
     
     return render(request, "sitspots/africaGarden.html",)
 
-def bajacaliforniaGarden(request):
+def bajaCaliforniaGarden(request):
     
-    return render(request, "sitspots/californiaGarden.html",)
+    return render(request, "sitspots/bajaCaliforniaGarden.html",)
 
 
 
