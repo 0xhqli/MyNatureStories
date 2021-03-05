@@ -43,7 +43,12 @@ def regchk(request):
 
 @login_required(login_url='/accounts/login')
 def adminpage(request):
-    return render(request, "staff/adminpage.html")
+    context={
+        'flaggedforreview': Post.objects.filter(flagged=False)|Comment.objects.filter(flagged=False)|Reply.objects.filter(flagged=False),
+        'userslist': User.objects.all(),
+        'tags': Tag.objects.all()
+    }
+    return render(request, "staff/adminpage.html", context)
 
 def loginpage(request):
     print(request.POST)
