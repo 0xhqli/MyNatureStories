@@ -19,6 +19,7 @@ class Post(models.Model):
     image = models.ImageField(null=True, upload_to='profile_pic', default='default.jpg')   #arguments to be changed
     zone = models.ForeignKey(MyUser, related_name="zone_posts", on_delete=models.SET_NULL, null=True)
     sitspot = models.CharField(max_length=255)
+    flagged=models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     def __str__(self):
@@ -46,6 +47,7 @@ class Comment(models.Model):
     author = models.TextField()
     user = models.ForeignKey(MyUser,related_name='comments', on_delete=models.SET_NULL, null=True)
     post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
+    flagged=models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     def __str__(self):
@@ -58,6 +60,7 @@ class Reply(models.Model):
     user = models.ForeignKey(MyUser,related_name='replies', on_delete=models.SET_NULL, null=True)
     website = models.URLField(max_length=500, blank=True, default='')
     comment = models.ForeignKey(Comment, related_name='replies', on_delete=models.CASCADE)
+    flagged=models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     def __str__(self):
