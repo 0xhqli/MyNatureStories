@@ -9,5 +9,6 @@ urlpatterns = [
     path('logmein',views.loginchk),
     path('tags/new',views.tags),
     path('tags/create',views.mktags),
-    path('tags/new',views.zones),
+    path('zones/new',views.zones),
+    path('zones/create',views.mkzones)
 ]
