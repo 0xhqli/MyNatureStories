@@ -9,11 +9,6 @@
     background-repeat: no-repeat;
     background-position: center;
 }
-.species-container{
-    display: flex;
-    flex-wrap: wrap;
-
-}
 .content{
     background-color: green;
     width: 80%;
@@ -21,10 +16,15 @@
     
     padding-bottom: 30px;
 }
+.species-container{
+    display: flex;
+    flex-wrap: wrap;
+
+}
 .species-photo{
     display:flex;
     flex-direction:column;
-    flex-grow: 1;
+    flex-basis: 50%;
 }
 .species-photo img{
     width: 300px;
@@ -34,7 +34,7 @@
 .species-info{
     display:flex;
     flex-direction: column;
-    flex-grow: 1;
+    flex-basis: 50%;
 }
 .species-name{
     flex-basis: 100%;
