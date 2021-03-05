@@ -25,8 +25,9 @@ def stories_partial(request):
 def stories_search_partial(request):
     print(request.POST)
     posts_search_by_title=Post.objects.filter(title__contains=request.POST['search']).order_by("-created_at")
+    posts_search_by_content=Post.objects.filter(content__contains=request.POST['search']).order_by("-created_at")
     context ={
-        "posts" : posts_search_by_title,
+        "posts" : posts_search_by_title|posts_search_by_content,
     }
     return render(request, "naturestories/stories_list.html", context)
 
