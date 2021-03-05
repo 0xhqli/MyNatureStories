@@ -29,13 +29,42 @@
             <div class="read_more_img">
                 <img src="{{post.image.url}}" class="img-fluid">
             </div>
-            <ul class="read_more">
-                <li>Author: {{post.author}}</li>
-                <li>Sitspot: {{post.sitspot}}</li>
-                <li>Zone: {{post.zone.name}}</li>
-                <li>{{post.content}}</li>
-                <li>Website: {{post.website}}</li>
-            </ul>
+            <div class="row justify-content-md-center">
+                <ul class="read_more col col-lg-8">
+                    <li><h5>Author</h5> {{post.author}}</li>
+                    <li><h5>Sitspot</h5> {{post.sitspot}}</li>
+                    <li><h5>Zone</h5> {{post.zone.name}}</li>
+                    {% if post.website %}
+                    <li><h5>Website</h5> {{post.website}}</li>
+                    {% endif %}
+                    <li><h5>Story</h5>{{post.content}}</li>
+                    <li>
+                        <h5>Comments</h5>
+                        <ul>
+                            {% for comment in post.comments.all %}
+                            <li>{{comment.author}}: {{comment.content}}</li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    <li>
+                        {% if messages %}
+                        <ul class="messages">    
+                            {% for message in messages %}   
+                                {{ message | safe }}
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        <form action="/naturestories/new_comment" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="post_id" value="{{post.id}}">
+                            <table class="table">
+                                {{ comment_form.as_table }}
+                            </table>
+                            <button type="submit" class="btn btn-primary btn-sm">Submit Comment</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
         </div>
     </body>
 </html>

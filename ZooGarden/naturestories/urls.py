@@ -6,6 +6,7 @@ urlpatterns = [
     path('create', views.stories_create),
     path('<int:numb>', views.stories_read_more),
 
-    path('new', views.storiesck),
+    path('new_story', views.storiesck),
+    path('new_comment', views.new_comment),
 
 ]
