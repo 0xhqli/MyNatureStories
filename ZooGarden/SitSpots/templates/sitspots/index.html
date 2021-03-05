@@ -9,7 +9,10 @@
         {% comment %}
         For bootstrap
         {% endcomment %}
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
         {% load static %}
         <link rel="stylesheet" href="{% static 'sitspots/css/style.css' %}">
         <script src="{% static 'sitspots/js/scripts.js' %}"></script>
@@ -35,15 +38,31 @@
         </header>
             <div class="imageCenter">
                 <div class="slides">
-                    <img src="{% static 'sitspots/img/frontentrance-7x5_orig.jpeg' %}" alt="">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="{% static 'sitspots/img/frontentrance-7x5_orig.jpeg' %}" class="carslides" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'sitspots/img/img-6632_orig.jpeg' %}" class="carslides" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'sitspots/img/img-6633_orig.jpeg' %}" class="carslides" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'sitspots/img/screen-shot-2021-03-01-at-1-03-46-pm_orig.png' %}" class="carslides" alt="...">
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <a href="#" class='btn btn-outline-dark linkbutton'>EXPLORE THE LA ZOO GARDENS</a>
             </div>
                 <div class="hollywood-image">   
                         <div class="box"> 
-                            <div class="paragraph">
+                            <div class="paragraph btmborderlight">
                                 <p>Purpose:</p>
                             </div>  
-                            <div class="paragraph">       
+                            <div class="paragraph btmborderlight">       
                                 <p>The purpose of this wildlife guide is to engage communities with nature and build skills to connect to nature in the Zoo, at home, and on one's own terms.</p>
                             </div>
                             <div class="paragraph">
@@ -54,6 +73,10 @@
                                 <p>What is conservation? </p>    
                             </div>                         
                         </div>
+                </div>
+
+                <div class="credits">
+                    <p>Photo used under Creative Commons from mjhbower</p>
                 </div>
 
             <div class="footer">
