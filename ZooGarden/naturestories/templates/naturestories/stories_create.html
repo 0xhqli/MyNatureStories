@@ -23,13 +23,15 @@
                     <a href="/accounts/logout">Logout</a>
                 </span>
             </nav>
-            <h1 class="text-center">My Nature Stories</h1>
+            <div class="story_header">
+                <h1 class="text-center story_header_text">My Nature Stories</h1>
+            </div>
         </header>
 
         <div class="container">
             <h2>Create Your Nature Stories</h2>
             {% if messages %}
-            <ul class="messages">    
+            <ul class="messages">
                 {% for message in messages %}   
                     {{ message | safe }}
                 {% endfor %}

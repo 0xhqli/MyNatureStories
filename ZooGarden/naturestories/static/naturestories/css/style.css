@@ -3,13 +3,23 @@
 }
 
 .story_header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 200px;
   background-image: url(../img/header_background.JPG);
   background-position: center;
   background-size: 100% auto;
   background-repeat: no-repeat;
+  
+}
+.story_header_text{
   color: #ffffff;
-  font-size: 50pt;
+  font-size: 40pt;
+  vertical-align: middle;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+  padding: 20px 20px 40px 20px;
+  border-radius: 5px;
 }
 
 .blog-grid {
