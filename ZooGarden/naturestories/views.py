@@ -17,3 +17,11 @@ def stories_create(request):
         "form" : form,
     }
     return render(request, "naturestories/stories_create.html", context)
+
+def stories_read_more(request, numb):
+    this_post = Post.objects.get(id=numb)
+    context ={
+        "post" : this_post,
+    }
+    return render(request, "naturestories/stories_read_more.html", context)
+    
