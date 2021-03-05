@@ -9,10 +9,33 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+.species-container{
+    display: flex;
+    flex-wrap: wrap;
+
+}
 .content{
     background-color: green;
     width: 80%;
     margin: auto;
     
     padding-bottom: 30px;
+}
+.species-photo{
+    display:flex;
+    flex-direction:column;
+    flex-grow: 1;
+}
+.species-photo img{
+    width: 300px;
+    padding: 10px;
+
+}
+.species-info{
+    display:flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.species-name{
+    flex-basis: 100%;
 }
