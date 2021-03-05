@@ -6,7 +6,7 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.core.exceptions import ValidationError
 from SitSpots.models import *
 
-from SitSpots.models import MyUser
+from staffapp.models import MyUser
 
 admin.site.register(Post)
 admin.site.register(Zone)
