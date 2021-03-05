@@ -17,7 +17,7 @@ class Post(models.Model):
     content = models.TextField()
     website = models.URLField(max_length=500, blank=True, default='')
     image = models.ImageField(null=True, upload_to='profile_pic', default='default.jpg')   #arguments to be changed
-    zone = models.ForeignKey(MyUser, related_name="zone_posts", on_delete=models.SET_NULL, null=True)
+    zone = models.ForeignKey(Zone, related_name="zone_posts", on_delete=models.SET_NULL, null=True)
     sitspot = models.CharField(max_length=255)
     flagged=models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
