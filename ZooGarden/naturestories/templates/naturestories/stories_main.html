@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="{% static 'naturestories/css/style.css' %}">
         <script src="{% static 'naturestories/js/scripts.js' %}"></script>
     </head>
-    <body class="container-fluid">
+    <body class="container-fluid" data-media-url="{% get_media_prefix %}">
         <header>
             <nav class="navbar navbar-light bg-light justify-content-between">
                 <a class="navbar-brand" href="/">LA Zoo SitSpots</a>
@@ -23,8 +23,7 @@
                     <a href="/accounts/logout">Logout</a>
                 </span>
             </nav>
-            
-            <h1>My Nature Stories</h1>
+            <h1 class="text-center">My Nature Stories</h1>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -60,10 +59,11 @@
                 </div>
             </nav>
         </header>
-
         <div class="container">
-            <p>Share your stories</p>
-            {{posts}}
+            <div class="text-center share_header">
+                <h3>Share your Nature Stories with the Community!</h3>
+                <a href="/naturestories/create" class="btn btn-success">Click Here to Add Your Story!</a>
+            </div>
             <div class="row">
             {% for post in posts %}
             <div class="col-lg-4">
@@ -71,14 +71,14 @@
                     <div class="blog-img">
                         <div class="date">{{post.created_at}}</div>
                         <a href="#">
-                            <img src="https://via.placeholder.com/350x280/FFB6C1/000000" title="" alt="">
+                            <img src="{% get_media_prefix %}{{post.image}}" class="img-fluid">
                         </a>
                     </div>
                     <div class="blog-info">
                         <h5>{{post.title}}</h5>
                         <p>{{post.content}}</p>
                         <div class="btn-bar">
-                            <a href="/{{post.id}}" class="px-btn-arrow">
+                            <a href="/naturestories/{{post.id}}" class="px-btn-arrow">
                                 <span>Read More</span>
                                 <i class="arrow"></i>
                             </a>
