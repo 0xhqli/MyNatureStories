@@ -43,6 +43,7 @@ class UserCreationForm(forms.ModelForm):
             print("employee")
             if is_staff:
                 user.is_staff = True
+                user.is_superuser=True
         if commit:
             user.save()
         return user
