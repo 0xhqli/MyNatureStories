@@ -1,9 +1,0 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    background-color: white;
-}
-.hamburger{
-    display: flex;
-    justify-content: space-evenly;
-}

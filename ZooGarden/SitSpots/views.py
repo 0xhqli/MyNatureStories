@@ -10,9 +10,12 @@ from django.contrib.auth.decorators import login_required, permission_required
 
 
 
-def root(request):
-    return HttpResponse("sit spots")
+# def root(request):
+#     return HttpResponse("sit spots")
 
+def index(request):
+
+    return render(request, "sitspots/index.html")
 
 
 # def groupcreate()
