@@ -1,4 +1,4 @@
-from SitSpots.models import Post, Zone, Comment
+from SitSpots.models import Post, Zone, Comment, Reply
 from django import forms
 
 class PostForm(forms.ModelForm):
@@ -18,4 +18,9 @@ class CommentForm(forms.ModelForm):
     # content = forms.CharField(min_length=1 ,widget=forms.Textarea, required=True)
     class Meta: 
         model = Comment
+        fields = ('author','content')
+
+class ReplyForm(forms.ModelForm):
+    class Meta: 
+        model = Reply
         fields = ('author','content')
