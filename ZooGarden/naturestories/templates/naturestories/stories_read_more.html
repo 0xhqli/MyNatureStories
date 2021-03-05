@@ -52,11 +52,14 @@
                         <h5>Comments</h5>
                         <ul>
                             {% for comment in post.comments.all %}
-                                <li class="row">
-                                    <div class="col col-lg-9">
+                                <li class="row comment_row">
+                                    <div class="col col-lg-1 ">
+                                        <div class="comment_profile_pic"></div>
+                                    </div>
+                                    <div class="col col-lg-9 comment_content">
                                         {{comment.author}}: {{comment.content}}
                                     </div>
-                                    <div class="col col-lg-3">
+                                    <div class="col col-lg-2 comment_reply">
                                         <a href="#">Reply</a>
                                     </div>
                                 </li>
