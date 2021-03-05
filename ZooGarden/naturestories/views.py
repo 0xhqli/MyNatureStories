@@ -75,3 +75,18 @@ def new_comment(request):
             messages.error(request, f"<div class='error'>{x.capitalize().replace('_',' ')}{y}</div>")
         return redirect(f'/naturestories/{request.POST["post_id"]}')
 
+def new_reply(request):
+    print(request.POST)
+    form = ReplyForm(request.POST)
+    # hidden input: "comment_id", "post_id"
+    if form.is_valid():
+        author = form.cleaned_data.get("author")
+        content = form.cleaned_data.get("content")
+        comment = Comment.objects.get(id = request.POST["comment_id"])
+        new_reply = Reply.objects.create(author=author, content=content, comment=comment)
+        new_reply.save()
+        return redirect(f'/naturestories/{request.POST["post_id"]}')
+    else:
+        for x, y in form.errors.items():
+            messages.error(request, f"<div class='error'>{x.capitalize().replace('_',' ')}{y}</div>")
+        return redirect(f'/naturestories/{request.POST["post_id"]}')
