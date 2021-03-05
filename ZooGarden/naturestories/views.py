@@ -5,7 +5,7 @@ from .forms import *
 
 
 def stories_main(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all().orderby("-created_at")
     context ={
         "posts" : posts,
     }
@@ -14,9 +14,9 @@ def stories_main(request):
 def stories_partial(request):
     print(request.POST)
     if request.POST['zone']=='all':
-        posts = Post.objects.all()
+        posts = Post.objects.all().orderby("-created_at")
     else:
-        posts=Post.objects.filter(zone__name=request.POST['zone'])
+        posts=Post.objects.filter(zone__name=request.POST['zone']).orderby("-created_at")
     context ={
         "posts" : posts,
     }
