@@ -46,7 +46,7 @@ class tagForm(forms.ModelForm):
 class zoneForm(forms.ModelForm):
     class Meta:
         model = Zone
-        fields = ('name')
+        fields = ('name',)
     def save(self, commit=True):
         # Save the provided password in hashed format
         print("*"*60)
