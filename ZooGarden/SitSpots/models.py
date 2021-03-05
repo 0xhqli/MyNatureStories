@@ -12,12 +12,12 @@ class Zone(models.Model):
 
 class Post(models.Model):
     author = models.CharField(max_length=255)
-    user = models.ForeignKey(MyUser, related_name="posts", on_delete=models.SET_NULL, null=True)
+    user = models.ForeignKey(MyUser, related_name="posts", on_delete=models.SET_NULL, null=True, default=None)
     title = models.CharField(max_length=255)
     content = models.TextField()
     website = models.URLField(max_length=500, blank=True, default='')
     image = models.ImageField(null=True, upload_to='profile_pic', default='default.jpg')   #arguments to be changed
-    zone = models.ForeignKey(MyUser, related_name="zone_posts", on_delete=models.SET_NULL, null=True)
+    zone = models.ForeignKey(Zone, related_name="zone_posts", on_delete=models.SET_NULL, null=True)
     sitspot = models.CharField(max_length=255)
     flagged=models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -45,7 +45,7 @@ class Tag(models.Model):
 class Comment(models.Model):
     content = models.TextField()
     author = models.TextField()
-    user = models.ForeignKey(MyUser,related_name='comments', on_delete=models.SET_NULL, null=True)
+    user = models.ForeignKey(MyUser,related_name='comments', on_delete=models.SET_NULL, null=True, default=None)
     post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
     flagged=models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -57,7 +57,7 @@ class Comment(models.Model):
 class Reply(models.Model):
     content = models.TextField()
     author = models.TextField()
-    user = models.ForeignKey(MyUser,related_name='replies', on_delete=models.SET_NULL, null=True)
+    user = models.ForeignKey(MyUser,related_name='replies', on_delete=models.SET_NULL, null=True, default=None)
     website = models.URLField(max_length=500, blank=True, default='')
     comment = models.ForeignKey(Comment, related_name='replies', on_delete=models.CASCADE)
     flagged=models.BooleanField(default=False)
