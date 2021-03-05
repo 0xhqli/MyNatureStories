@@ -31,4 +31,26 @@ function attach(){
             });
         }
     })
+    $('#search_button').click(function(but){
+        but.preventDefault()
+        let search=$("#search").val()
+        console.log(search);
+        let form={}
+        form['csrfmiddlewaretoken']=csrf
+        form['search']=search
+        console.log(form);
+        $.ajax({
+            type: "POST",
+            url: '/naturestories/ajax_search_stories',
+            data: form,
+            success: $.proxy(function (result) {
+                // console.log(result)
+                $('#posts').fadeOut(150)
+                setTimeout(function(){
+                    $('#posts').html(result)
+                }, 150)
+                $('#posts').fadeIn(150)
+            }, this)
+        });
+    })
 }
