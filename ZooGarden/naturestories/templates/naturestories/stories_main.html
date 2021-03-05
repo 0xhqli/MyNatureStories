@@ -64,6 +64,90 @@
         <div class="container">
             <p>Share your stories</p>
             {{posts}}
+            <div class="row">
+            {% for post in posts %}
+            <div class="col-lg-4">
+                <div class="blog-grid">
+                    <div class="blog-img">
+                        <div class="date">{{post.created_at}}</div>
+                        <a href="#">
+                            <img src="https://via.placeholder.com/350x280/FFB6C1/000000" title="" alt="">
+                        </a>
+                    </div>
+                    <div class="blog-info">
+                        <h5>{{post.title}}</h5>
+                        <p>{{post.content}}</p>
+                        <div class="btn-bar">
+                            <a href="/{{post.id}}" class="px-btn-arrow">
+                                <span>Read More</span>
+                                <i class="arrow"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+                <div class="col-lg-4">
+                    <div class="blog-grid">
+                        <div class="blog-img">
+                            <div class="date">04 FEB</div>
+                            <a href="#">
+                                <img src="https://via.placeholder.com/350x280/FFB6C1/000000" title="" alt="">
+                            </a>
+                        </div>
+                        <div class="blog-info">
+                            <h5><a href="#">Prevent 75% of visitors from google analytics</a></h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                            <div class="btn-bar">
+                                <a href="#" class="px-btn-arrow">
+                                    <span>Read More</span>
+                                    <i class="arrow"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="blog-grid">
+                        <div class="blog-img">
+                            <div class="date">04 FEB</div>
+                            <a href="#">
+                                <img src="https://via.placeholder.com/350x280/FFB6C1/000000" title="" alt="">
+                            </a>
+                        </div>
+                        <div class="blog-info">
+                            <h5><a href="#">Prevent 75% of visitors from google analytics</a></h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                            <div class="btn-bar">
+                                <a href="#" class="px-btn-arrow">
+                                    <span>Read More</span>
+                                    <i class="arrow"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="blog-grid">
+                        <div class="blog-img">
+                            <div class="date">04 FEB</div>
+                            <a href="#">
+                                <img src="https://via.placeholder.com/350x280/FFB6C1/000000" title="" alt="">
+                            </a>
+                        </div>
+                        <div class="blog-info">
+                            <h5><a href="#">Prevent 75% of visitors from google analytics</a></h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                            <div class="btn-bar">
+                                <a href="#" class="px-btn-arrow">
+                                    <span>Read More</span>
+                                    <i class="arrow"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 
