@@ -39,6 +39,7 @@ function attach(){
         form['csrfmiddlewaretoken']=csrf
         form['search']=search
         console.log(form);
+        $('.nav-link').attr('active','0')
         $.ajax({
             type: "POST",
             url: '/naturestories/ajax_search_stories',
