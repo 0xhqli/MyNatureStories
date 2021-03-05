@@ -16,6 +16,13 @@
     </head>
     <body>
         <div class="container">
+            {% if messages %}
+                <ul class="messages">    
+                    {% for message in messages %}    
+                        {{ message | safe }}
+                    {% endfor %}
+                </ul>
+            {% endif %}
             <div class="flaggedforreview">
                 <p>Flagged for review:</p>
             </div>

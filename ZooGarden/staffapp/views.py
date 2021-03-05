@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.http import JsonResponse
 from staffapp.models import *
 from SitSpots.models import *
-from .forms import loginForm, tagForm
+from .forms import loginForm, tagForm, zoneForm
 from .admin import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
@@ -79,7 +79,41 @@ def tags(request):
     form = tagForm()
     context = { 
         "form": form,
-        "action": '/accounts/mktags',
-        'button': 'Login'
+        "action": '/accounts/tags/create',
+        'button': 'Add'
     }
     return render(request, "staff/adminforms.html", context)
+
+def mktags(request):
+    form = tagForm(request.POST)
+    if form.is_valid():
+        tag=form.save()
+        messages.success(request, 'Tag created successfully')
+        return redirect('/accounts')
+    else:
+        print(form.errors.items())
+        for x, y in form.errors.items():
+            messages.error(request, f"<div class='error'>{x.capitalize().replace('_',' ')}{y}</div>")
+        return redirect('/accounts/tags/new')
+
+def zones(request):
+    print(request.POST)
+    form = zoneForm()
+    context = { 
+        "form": form,
+        "action": '/accounts/zones/create',
+        'button': 'Add'
+    }
+    return render(request, "staff/adminforms.html", context)
+
+def mkzones(request):
+    form = zoneForm(request.POST)
+    if form.is_valid():
+        zone=form.save()
+        messages.success(request, 'Zone created successfully')
+        return redirect('/accounts')
+    else:
+        print(form.errors.items())
+        for x, y in form.errors.items():
+            messages.error(request, f"<div class='error'>{x.capitalize().replace('_',' ')}{y}</div>")
+        return redirect('/accounts/zones/new')
