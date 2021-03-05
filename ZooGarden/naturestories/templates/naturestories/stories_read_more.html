@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="{% static 'naturestories/css/style.css' %}">
         <script src="{% static 'naturestories/js/scripts.js' %}"></script>
     </head>
-    <body class="container-fluid">
+    <body class="container-fluid" data-media-url="{% get_media_prefix %}">
         <header>
             <nav class="navbar navbar-light bg-light justify-content-between">
                 <a class="navbar-brand" href="/">LA Zoo SitSpots</a>
@@ -24,8 +24,18 @@
                 </span>
             </nav>
         </header>
-        {{post}}
-        <h2>{{post.title}} Title</h2>
-        
+        <div class="container">
+            <h2 class="text-center">{{post.title}}</h2>
+            <div class="read_more_img">
+                <img src="{{post.image.url}}" class="img-fluid">
+            </div>
+            <ul class="read_more">
+                <li>Author: {{post.author}}</li>
+                <li>Sitspot: {{post.sitspot}}</li>
+                <li>Zone: {{post.zone.name}}</li>
+                <li>{{post.content}}</li>
+                <li>Website: {{post.website}}</li>
+            </ul>
+        </div>
     </body>
 </html>

@@ -1,9 +1,14 @@
+.share_header{
+  padding: 30px;
+}
+
 .blog-grid {
     margin-top: 15px;
     margin-bottom: 15px;
   }
   .blog-grid .blog-img {
     position: relative;
+    height: 280px;
     border-radius: 5px;
     overflow: hidden;
   }
@@ -84,3 +89,14 @@
       -webkit-transform: rotate(45deg);
       transform: rotate(45deg);
   }
+
+/* ######################################################### */
+ul.read_more{
+  list-style-type: none;
+}
+
+.read_more_img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
