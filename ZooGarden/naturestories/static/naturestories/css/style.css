@@ -158,3 +158,9 @@ ul.read_more{
   display: flex;
   align-items: center;
 }
+.indented_replies{
+  padding: 5px;
+  background-color: #f8f9fa;
+  border-radius: .50rem;
+  border: 2px solid white;
+}
