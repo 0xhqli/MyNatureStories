@@ -14,7 +14,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 def root(request):
     return redirect('/accounts/login')
 
-# @login_required(login_url='/accounts/login')
+@login_required(login_url='/accounts/login')
 # @permission_required('SitSpots.add_MyUser',raise_exception=True) 
 def register(request):
     print(request.POST)
@@ -26,7 +26,7 @@ def register(request):
     }
     return render(request, "staff/adminforms.html", context)
 
-# @login_required(login_url='/accounts/login')
+@login_required(login_url='/accounts/login')
 # @permission_required('SitSpots.add_MyUser',raise_exception=True) 
 def regchk(request):
     form = UserCreationForm(request.POST)
