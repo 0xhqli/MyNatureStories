@@ -14,9 +14,11 @@ from django.contrib.auth.decorators import login_required, permission_required
 #     return HttpResponse("sit spots")
 
 def index(request):
+    
     return render(request, "sitspots/index.html")
 
 def zooGarden(request):
-    return render(request, "sitspots/zooGarden.html")
+    
+    return render(request, "sitspots/zooGarden.html",)
 
 # def groupcreate()
