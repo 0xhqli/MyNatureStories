@@ -2,6 +2,16 @@
   padding: 30px;
 }
 
+.story_header{
+  height: 200px;
+  background-image: url(../img/header_background.JPG);
+  background-position: center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  font-size: 50pt;
+}
+
 .blog-grid {
     margin-top: 15px;
     margin-bottom: 15px;
@@ -11,6 +21,7 @@
     height: 280px;
     border-radius: 5px;
     overflow: hidden;
+    background-color: cadetblue;
   }
   .blog-grid .blog-img .date {
     position: absolute;
