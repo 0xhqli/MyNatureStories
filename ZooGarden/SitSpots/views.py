@@ -35,7 +35,7 @@ def northAmericaGarden(request):
 
 def australiaGarden(request):
     
-    return render(request, "sitspots/austaliaGarden.html",)
+    return render(request, "sitspots/australiaGarden.html",)
 
 def africaGarden(request):
     
