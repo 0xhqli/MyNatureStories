@@ -10,6 +10,7 @@ from staffapp.models import MyUser
 
 admin.site.register(Post)
 admin.site.register(Zone)
+admin.site.register(Tag)
 
 
 class UserCreationForm(forms.ModelForm):

@@ -9,5 +9,5 @@ urlpatterns = [
 
     path('new_story', views.storiesck),
     path('new_comment', views.new_comment),
-
+    path('new_reply', views.new_reply),
 ]

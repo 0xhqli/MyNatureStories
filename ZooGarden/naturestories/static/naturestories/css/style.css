@@ -102,5 +102,15 @@ ul.read_more{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 50px 0px;
+  padding: 10px 0px 50px 0px;
+
+}
+
+.tag{
+  display: inline-block;
+  background-color: aquamarine;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .30rem;
+  padding: 0px 5px;
+  color: black;
 }

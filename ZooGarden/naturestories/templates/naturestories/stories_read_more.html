@@ -25,12 +25,22 @@
             </nav>
         </header>
         <div class="container">
+            <a class="btn btn-primary btn-sm" href="/naturestories">Back To Nature Stories</a>
             <h2 class="text-center">{{post.title}}</h2>
             <div class="read_more_img">
                 <img src="{{post.image.url}}" class="img-fluid">
             </div>
+
             <div class="row justify-content-md-center">
                 <ul class="read_more col col-lg-8">
+                    <li class="row">
+                        <p class="col col-lg-1">Tags:</p>
+                        {% for tag in post.tags.all %}
+                        <div class="col col-lg-3">
+                            <a href="#"><p class="tag">{{tag.name}}</p></a>
+                        </div>
+                        {% endfor %}
+                    </li>
                     <li><h5>Author</h5> {{post.author}}</li>
                     <li><h5>Sitspot</h5> {{post.sitspot}}</li>
                     <li><h5>Zone</h5> {{post.zone.name}}</li>
@@ -42,13 +52,20 @@
                         <h5>Comments</h5>
                         <ul>
                             {% for comment in post.comments.all %}
-                            <li>{{comment.author}}: {{comment.content}}</li>
+                                <li class="row">
+                                    <div class="col col-lg-9">
+                                        {{comment.author}}: {{comment.content}}
+                                    </div>
+                                    <div class="col col-lg-3">
+                                        <a href="#">Reply</a>
+                                    </div>
+                                </li>
                             {% endfor %}
                         </ul>
                     </li>
                     <li>
                         {% if messages %}
-                        <ul class="messages">    
+                        <ul class="messages">
                             {% for message in messages %}   
                                 {{ message | safe }}
                             {% endfor %}
