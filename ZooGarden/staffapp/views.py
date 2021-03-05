@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.http import JsonResponse
 from staffapp.models import *
-from .forms import loginForm
+from .forms import loginForm, tagForm
 from .admin import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
@@ -68,12 +68,12 @@ def loginchk(request):
         messages.error(request, f"<div class='error'><ul><li>Invalid Credentials</li></ul></div>")
     return redirect('/accounts/login')
 
-def groupcreatepage(request):
+def tags(request):
     print(request.POST)
-    form = loginForm()
+    form = tagForm()
     context = { 
         "form": form,
-        "action": '/logmein',
+        "action": '/accounts/mktags',
         'button': 'Login'
     }
     return render(request, "staff/adminforms.html", context)

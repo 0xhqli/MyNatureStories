@@ -22,3 +22,12 @@ from staffapp.models import MyUser
 class loginForm(forms.Form):
     username = forms.CharField(max_length=45, required=True)
     password = forms.CharField(label='Password', widget=forms.PasswordInput, required=True)
+
+class tagForm(forms.Form):
+    type = forms.CharField(max_length=255)
+    name =  forms.CharField(max_length=255)
+    scientific_name = forms.CharField(min_length=7,widget=forms.Textarea)
+    description = forms.CharField(min_length=7,widget=forms.Textarea)
+    diet = forms.CharField(min_length=7,widget=forms.Textarea)
+    habitat = forms.CharField(min_length=7,widget=forms.Textarea)
+    terrestrial_biome = forms.CharField(min_length=7,widget=forms.Textarea)
