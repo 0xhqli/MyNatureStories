@@ -58,11 +58,50 @@
                                     </div>
                                     <div class="col col-lg-9 comment_content">
                                         {{comment.author}}: {{comment.content}}
+                                        <!-- {% for reply in comment.replies.all %}
+                                        <div class="row reply_row">
+                                            <div class="col col-lg-2">
+                                                <div class="comment_profile_pic"></div>
+                                            </div>
+                                            <div class="col col-lg-10">
+                                                {{reply.author}}: {{reply.content}}
+                                            </div>
+                                        </div>
+                                        {% endfor %} -->
                                     </div>
                                     <div class="col col-lg-2 comment_reply">
                                         <a href="#">Reply</a>
                                     </div>
                                 </li>
+                                <li class="row reply_row">
+                                    <div class="col col-lg-1 "></div>
+                                    <div class="col col-lg-11">
+                                        <div class="row indented_replies">
+                                            <div class="col col-lg-1"><div class="comment_profile_pic"></div></div>
+                                            <div class="col col-lg-11 comment_content">Author: reply space filler1</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="row reply_row">
+                                    <div class="col col-lg-1 "></div>
+                                    <div class="col col-lg-11">
+                                        <div class="row indented_replies">
+                                            <div class="col col-lg-1"><div class="comment_profile_pic"></div></div>
+                                            <div class="col col-lg-11 comment_content">Author: reply space filler2</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                {% for reply in comment.replies.all %}
+                                <li class="row reply_row">
+                                    <div class="col col-lg-1 "></div>
+                                    <div class="col col-lg-11">
+                                        <div class="row indented_replies">
+                                            <div class="col col-lg-1"><div class="comment_profile_pic"></div></div>
+                                            <div class="col col-lg-11 comment_content">{{reply.author}}: {{reply.content}}</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                {% endfor %}
                             {% endfor %}
                         </ul>
                     </li>
