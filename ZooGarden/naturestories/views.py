@@ -11,6 +11,17 @@ def stories_main(request):
     }
     return render(request, "naturestories/stories_main.html", context)
 
+def stories_partial(request):
+    print(request.POST)
+    if request.POST['zone']=='all':
+        posts = Post.objects.all()
+    else:
+        posts=Post.objects.filter(zone__name=request.POST['zone'])
+    context ={
+        "posts" : posts,
+    }
+    return render(request, "naturestories/stories_list.html", context)
+
 def stories_create(request):
     form = PostForm()
     context ={
