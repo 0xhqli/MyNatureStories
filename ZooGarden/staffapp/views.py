@@ -5,7 +5,7 @@ from SitSpots.models import *
 from .forms import loginForm, tagForm, zoneForm
 from .admin import UserCreationForm
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import Group
 from django.contrib.auth.models import Permission
 from django.contrib.auth.decorators import login_required, permission_required
@@ -43,9 +43,12 @@ def regchk(request):
 
 @login_required(login_url='/accounts/login')
 def adminpage(request):
+    flaggedposts=list(Post.objects.filter(flagged=False))
+    flaggedcomments=list(Comment.objects.filter(flagged=False))
+    flaggedreplies=list(Reply.objects.filter(flagged=False))
     context={
-        'flaggedforreview': Post.objects.filter(flagged=False)|Comment.objects.filter(flagged=False)|Reply.objects.filter(flagged=False),
-        'userslist': User.objects.all(),
+        'flaggedforreview': flaggedposts+flaggedcomments+flaggedreplies,
+        'userslist': MyUser.objects.all(),
         'tags': Tag.objects.all()
     }
     return render(request, "staff/adminpage.html", context)
@@ -117,3 +120,12 @@ def mkzones(request):
         for x, y in form.errors.items():
             messages.error(request, f"<div class='error'>{x.capitalize().replace('_',' ')}{y}</div>")
         return redirect('/accounts/zones/new')
+
+@login_required(login_url='/accounts/login')
+def logoutfun(request):
+    logout(request)
+    return redirect("/accounts/logout/success")
+
+def logoutsuccess(request):
+    return render(request, 'staff/loggedout.html')
+    

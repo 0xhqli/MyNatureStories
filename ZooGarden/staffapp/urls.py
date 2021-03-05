@@ -10,5 +10,7 @@ urlpatterns = [
     path('tags/new',views.tags),
     path('tags/create',views.mktags),
     path('zones/new',views.zones),
-    path('zones/create',views.mkzones)
+    path('zones/create',views.mkzones),
+    path('logout',views.logoutfun),
+    path('logout/success',views.logoutsuccess),
 ]
