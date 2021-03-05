@@ -1,11 +1,9 @@
 *{
     margin: 0px;
     padding: 0px;
-    background-color: aliceblue;
+    background-color: white;
 }
-ul{
-    margin-left: 20px;
-}
-li{
-    margin-left: 20px;
+.hamburger{
+    display: flex;
+    justify-content: space-evenly;
 }
