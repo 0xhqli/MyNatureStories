@@ -70,7 +70,7 @@ class Migration(migrations.Migration):
                 ('website', models.URLField(blank=True, default='', max_length=500)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
-                ('comment', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='replies', to='SitSpots.comment')),
+                ('comment', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='replies', to='SitSpots.Comment')),
             ],
         ),
     ]
