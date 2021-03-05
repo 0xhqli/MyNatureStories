@@ -68,12 +68,12 @@ def loginchk(request):
         messages.error(request, f"<div class='error'><ul><li>Invalid Credentials</li></ul></div>")
     return redirect('/accounts/login')
 
-def groupcreatepage(request):
+def tags(request):
     print(request.POST)
     form = loginForm()
     context = { 
         "form": form,
-        "action": '/logmein',
+        "action": '/accounts/logmein',
         'button': 'Login'
     }
     return render(request, "staff/adminforms.html", context)
