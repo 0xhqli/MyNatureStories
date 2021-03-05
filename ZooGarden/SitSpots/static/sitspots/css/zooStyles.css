@@ -4,9 +4,8 @@
 .tree-image{
     background-image: url(../img/1248253927.jpeg);
     background-size: cover;
-    padding: 100px;
-    width: 100%;
-    height: 1200px;
+    padding: 75px;
+    min-width: 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -14,6 +13,6 @@
     background-color: green;
     width: 80%;
     margin: auto;
-    margin-top: 100px;
-    padding-bottom: 100px;
+    
+    padding-bottom: 30px;
 }
