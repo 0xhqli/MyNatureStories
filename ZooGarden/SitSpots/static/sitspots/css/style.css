@@ -1,10 +1,7 @@
-/* *{
-    margin: 0px;
+*{
     padding: 0px;
-    background-color:blue;
-
-} */
-
+    margin: 0px;
+}
 .hollywood-image{
     background-image: url(../img/1233534158.jpeg);
     background-size: cover;

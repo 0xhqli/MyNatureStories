@@ -1,6 +1,7 @@
-
-
-
+*{
+    padding: 0px;
+    margin: 0px;
+}
 .tree-image{
     background-image: url(../img/1248253927.jpeg);
     background-size: cover;
@@ -38,4 +39,10 @@
 }
 .species-name{
     flex-basis: 100%;
+}
+.menucolor{
+    background: #1C6EA4;
+    background: -moz-linear-gradient(top, #1C6EA4 0%, #2388CB 50%, #144E75 100%);
+    background: -webkit-linear-gradient(top, #1C6EA4 0%, #2388CB 50%, #144E75 100%);
+    background: linear-gradient(to bottom, #1C6EA4 0%, #2388CB 50%, #144E75 100%);
 }
