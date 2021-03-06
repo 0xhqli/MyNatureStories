@@ -23,12 +23,12 @@ function attach(){
                 url: '/sitspots/zoogarden/ajax',
                 data: form,
                 success: $.proxy(function (result) {
-                    console.log(result)
-                    // $('#posts').fadeOut(150)
-                    // setTimeout(function(){
-                    //     $('#posts').html(result)
-                    // }, 150)
-                    // $('#posts').fadeIn(150)
+                    // console.log(result)
+                    $('#animalsandplants').fadeOut(150)
+                    setTimeout(function(){
+                        $('#animalsandplants').html(result)
+                    }, 150)
+                    $('#animalsandplants').fadeIn(150)
                 }, this)
             });
         }
