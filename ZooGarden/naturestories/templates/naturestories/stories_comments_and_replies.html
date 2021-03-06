@@ -1,5 +1,5 @@
 {%load crispy_forms_tags %}
-{% for comment in post.comments.all %}
+{% for comment in post.comments.all|dictsortreversed:"created_at" %}
     <li class="row comment_row border">
         <div class="col col-lg-1 ">
             <div class="comment_profile_pic"></div>
@@ -25,7 +25,7 @@
     <li class="row reply_row">
         <div class="col col-lg-1 "></div>
         <div class="col col-lg-11 form_row">
-        <form class="form-inline" action="/naturestories/new_reply" method="POST">
+        <form class="form-inline reply_form_ajax" action="/naturestories/new_reply" method="POST">
             {% csrf_token %}
             <input type="hidden" name="post_id" value="{{post.id}}">
             <input type="hidden" name="comment_id" value="{{comment.id}}">
