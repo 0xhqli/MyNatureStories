@@ -11,4 +11,6 @@ urlpatterns = [
     path('new_story', views.storiesck),
     path('new_comment', views.new_comment),
     path('new_reply', views.new_reply),
+    path('new_reply_ajax', views.new_reply_ajax),
+    path('new_comment_ajax', views.new_comment_ajax),
 ]
