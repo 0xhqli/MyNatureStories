@@ -14,7 +14,7 @@
     background-color: #c9f8a9;
     width: 80%;
     margin: auto;
-    
+    max-width: 1200px;
     padding-bottom: 30px;
 }
 h3{
