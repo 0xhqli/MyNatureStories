@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import JsonResponse
 from SitSpots.models import *
 from staffapp.models import *
 from .forms import *
@@ -87,6 +88,7 @@ def new_comment(request):
         return redirect(f'/naturestories/{request.POST["post_id"]}')
 
 def new_reply(request):
+    print("*"*40)
     print(request.POST)
     form = ReplyForm(request.POST)
     # hidden input: "comment_id", "post_id"
@@ -101,3 +103,51 @@ def new_reply(request):
         for x, y in form.errors.items():
             messages.error(request, f"<div class='error'>{x.capitalize().replace('_',' ')}{y}</div>")
         return redirect(f'/naturestories/{request.POST["post_id"]}')
+
+def new_reply_ajax(request):
+    print("*"*40)
+    print(request.POST)
+    form = ReplyForm(request.POST)
+    # hidden input: "comment_id", "post_id"
+    if form.is_valid():
+        author = form.cleaned_data.get("author")
+        content = form.cleaned_data.get("content")
+        comment = Comment.objects.get(id = request.POST["comment_id"])
+        new_reply = Reply.objects.create(author=author, content=content, comment=comment)
+        new_reply.save()
+        this_post=comment.post
+        reply_form = ReplyForm()
+        context ={
+            "post" : this_post,
+            "reply_form" : reply_form,
+        }
+        print("*"*40)
+        return render(request, "naturestories/stories_comments_and_replies.html", context)
+    else:
+        err={}
+        for x, y in form.errors.items():
+            err[x]=y.__str__
+        return JsonResponse(err)
+
+def new_comment_ajax(request):
+    print("*"*40)
+    print(request.POST)
+    form = CommentForm(request.POST)
+    if form.is_valid():
+        author = form.cleaned_data.get("author")
+        content = form.cleaned_data.get("content")
+        post = Post.objects.get(id = request.POST["post_id"])
+        new_comment = Comment.objects.create(author=author, content=content, post=post)
+        new_comment.save()
+        reply_form = ReplyForm()
+        context ={
+            "post" : post,
+            "reply_form" : reply_form,
+        }
+        print("*"*40)
+        return render(request, "naturestories/stories_comments_and_replies.html", context)
+    else:
+        err={}
+        for x, y in form.errors.items():
+            err[x]=y.__str__
+        return JsonResponse(err)
