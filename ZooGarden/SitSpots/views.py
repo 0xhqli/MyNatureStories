@@ -18,32 +18,50 @@ def index(request):
     return render(request, "sitspots/index.html")
 
 def zooGarden(request):
-    
-    return render(request, "sitspots/zooGarden.html",)
+    context={
+        'sub':"sitspots/californiaGarden.html"
+    }
+    return render(request, "sitspots/zooGarden.html",context)
 
 def californiaGarden(request):
-
-    return render(request, "sitspots/californiaGarden.html",)
+    context={
+        'sub':"sitspots/californiaGarden.html"
+    }
+    return render(request, "sitspots/zooGarden.html",context)
 
 def southAmericaGarden(request):
-    
-    return render(request, "sitspots/southAmericaGarden.html",)
+    context={
+        'sub':"sitspots/southAmericaGarden.html"
+    }
+    return render(request, "sitspots/zooGarden.html",context)
 
 def northAmericaGarden(request):
-    
-    return render(request, "sitspots/northAmericaGarden.html",)
+    context={
+        'sub':"sitspots/northAmericaGarden.html"
+    }
+    return render(request, "sitspots/zooGarden.html",context)
 
 def australiaGarden(request):
-    
-    return render(request, "sitspots/australiaGarden.html",)
+    context={
+        'sub':"sitspots/australiaGarden.html"
+    }
+    return render(request, "sitspots/zooGarden.html",context)
 
 def africaGarden(request):
-    
-    return render(request, "sitspots/africaGarden.html",)
+    context={
+        'sub':"sitspots/africaGarden.html"
+    }
+    return render(request, "sitspots/zooGarden.html",context)
 
 def bajaCaliforniaGarden(request):
-    
-    return render(request, "sitspots/bajaCaliforniaGarden.html",)
+    context={
+        'sub':"sitspots/bajaCaliforniaGarden.html"
+    }
+    return render(request, "sitspots/zooGarden.html",context)
+
+def zGardenAjax(request):
+    print(request.POST)
+    return render(request, f"sitspots/{request.POST['zone']}",)
 
 
 
