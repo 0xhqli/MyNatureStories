@@ -18,13 +18,14 @@
     </head>
     <body class="container-fluid" data-media-url="{% get_media_prefix %}">
         <header>
-            <nav class="navbar navbar-light bg-light justify-content-between">
+            <!-- <nav class="navbar navbar-light bg-light justify-content-between">
                 <a class="navbar-brand" href="/">LA Zoo SitSpots</a>
                 <span class="navbar-text">
                     <a href="/accounts/login">Login</a> |
                     <a href="/accounts/logout">Logout</a>
                 </span>
-            </nav>
+            </nav> -->
+            {% include 'naturestories/sitspotsheader.html' %}
             <div class="story_header">
                 <h1 class="text-center story_header_text">My Nature Stories</h1>
             </div>
@@ -38,25 +39,25 @@
                             <a class="nav-link disabled" href="#">Choose a Garden to Explore: </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" active="1" loclink="all">All Gardens<span class="sr-only">(current)</span></a>
+                            <a class="nav-link zones" href="#" active="1" loclink="all">All Gardens<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" active="0" loclink="California Garden">California Garden</a>
+                            <a class="nav-link zones" href="#" active="0" loclink="California Garden">California Garden</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" active="0" loclink="Baja California Garden">Baja California Garden</a>
+                            <a class="nav-link zones" href="#" active="0" loclink="Baja California Garden">Baja California Garden</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" active="0" loclink="North America Garden">North America Garden</a>
+                            <a class="nav-link zones" href="#" active="0" loclink="North America Garden">North America Garden</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" active="0" loclink="Australasia Garden">Australasia Garden</a>
+                            <a class="nav-link zones" href="#" active="0" loclink="Australasia Garden">Australasia Garden</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" active="0" loclink="Africa Garden">Africa Garden</a>
+                            <a class="nav-link zones" href="#" active="0" loclink="Africa Garden">Africa Garden</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" active="0" loclink="South America Garden">South America Garden</a>
+                            <a class="nav-link zones" href="#" active="0" loclink="South America Garden">South America Garden</a>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
