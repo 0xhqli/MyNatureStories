@@ -10,5 +10,6 @@ urlpatterns = [
     path('northAmericaGarden', views.northAmericaGarden),
     path('bajaCaliforniaGarden', views.bajaCaliforniaGarden), 
     path('californiaGarden', views.californiaGarden),
+    path('sitspots/zoogarden/ajax', views.zGardenAjax),
 
 ]
