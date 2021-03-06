@@ -3,14 +3,14 @@ $('document').ready(function(){
 })
 
 function attach(){
-    $('.nav-link').click(function(link){
+    $('.zones').click(function(link){
         link.preventDefault()
         let loc=$(this).attr('loclink')
         console.log(loc);
         let ifbit=($(this).attr('active')=='1')
         console.log(ifbit)
         if(!ifbit){
-            $('.nav-link').attr('active','0')
+            $('.zones').attr('active','0')
             $(this).attr('active','1')
             let form={}
             form['csrfmiddlewaretoken']=csrf
@@ -39,7 +39,7 @@ function attach(){
         form['csrfmiddlewaretoken']=csrf
         form['search']=search
         console.log(form);
-        $('.nav-link').attr('active','0')
+        $('.zones').attr('active','0')
         $.ajax({
             type: "POST",
             url: '/naturestories/ajax_search_stories',
