@@ -63,6 +63,22 @@ def zGardenAjax(request):
     print(request.POST)
     return render(request, f"sitspots/{request.POST['zone']}",)
 
+def findYourSitSpot(request):
+    context={
+        'route':"Find your sitspot"
+    }
+    return render(request, "sitspots/template.html",context)
+def about(request):
+    context={
+        'route':"about"
+    }
+    return render(request, "sitspots/template.html",context)
+def contact(request):
+    context={
+        'route':"contact"
+    }
+    return render(request, "sitspots/template.html",context)
+
 
 
 
