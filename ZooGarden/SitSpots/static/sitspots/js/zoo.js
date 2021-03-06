@@ -3,15 +3,15 @@ $('document').ready(function(){
 })
 
 function attach(){
-    $('.nav-link').click(function(link){
+    $('.zones').click(function(link){
         link.preventDefault()
         let loc=$(this).attr('loclink')
         console.log(loc);
         let ifbit=($(this).attr('active')=='1')
         console.log(ifbit)
         if(!ifbit){
-            $('.nav-link').attr('active','0')
-            $('.nav-link').removeClass('active')
+            $('.zones').attr('active','0')
+            $('.zones').removeClass('active')
             $(this).attr('active','1')
             $(this).addClass('active')
             let form={}
