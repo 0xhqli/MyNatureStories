@@ -1,91 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        {% comment %}
-        For bootstrap
-        {% endcomment %}
-
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-
-        {% load static %}
-        <link rel="stylesheet" href="{% static 'sitspots/css/style.css' %}">
-        <script src="{% static 'sitspots/js/scripts.js' %}"></script>
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-light bg-light justify-content-between">
-            <a class="navbar-brand" href="/"><h5></h5></a>
-            <h1>A Sit Spot in LA Zoo</h1>
-            <span class="navbar-text">
-                <a href="/accounts/login">Login</a>
-                <a href="/accounts/logout">Logout</a>
-            </span>
-        </nav>
-        <h1 class="text-center">LA Zoo Gardens</h1>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo02">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" active="1">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/zooGarden" active="0">LA Zoo Gardens</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" active="0">Find your Sit Spot</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" active="0">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/naturestories" active="0">Your Nature Stories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" active="0">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <div class="tree-image">
-        <div class="content">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo03">
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/californiaGarden" active="1">California Garden</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/bajaCaliforniaGarden" active="0">Baja California Garden</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/northAmericaGarden" active="0">North America Garden</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/southAmericaGarden" active="0">South America Garden</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/africaGarden" active="0">Africa Garden</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/australiaGarden" active="0">Australia Garden</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+{% load static %}
+<div class="species-container">
+    <div class="species-name">
+        <p>Anna's Hummingbird</p>
+    </div>
+    <div class="species-photo">
+        <div class="species-image">
+            <img src="{% static 'sitspots/img/anna-s-hummingbird-adult-male-kyle-blaney_orig.jpeg' %}">
+            <p>Male//photo by Kyle Blaney</p>
         </div>
-    </div>   
-</body>
-</html>
+        <div class="species-image">
+            <img src="{% static 'sitspots/img/anna-s-hummingbird-female-ryan-winkleman_orig.jpeg' %}">
+            <p>female//photo by Ryan Winkleman</p>
+        </div>
+    </div>
+    <div class="species-info">
+        <p>Description : Tiny green and gray bird, with a straght short bill and a fairly broad tail. Which extend longer than the wingtips.</p>
+        <p>Diet: Nectar from th flowering plants including current and gooseberry nectar are the main diet. They also can be found to eat a variety of insects, the smaller ones ones that can be found on a web or flower.</p> 
+        <p>Habitat: Common in urban and suburban settings. Other habitas they can be found in are chaparral,costal srubs and open woodlands.</p>
+        <p>Terrestrial Biomes: </p>                    
+    </div>
+</div>
