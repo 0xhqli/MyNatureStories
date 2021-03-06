@@ -13,8 +13,9 @@
         {% load static %}
         <link rel="stylesheet" href="{% static 'staffapp/css/style.css' %}">
         <script src="{% static 'staffapp/js/scripts.js' %}"></script>
+        {%load crispy_forms_tags %}
     </head>
-    <body>
+    <body class="container">
         {% if messages %}
             <ul class="messages">    
                 {% for message in messages %}    
@@ -24,10 +25,8 @@
         {% endif %}
         <form class="" action="{{action}}" method="post">
             {% csrf_token %}
-            <table class="table">
-                {{ form.as_table }}
-            </table>
-            <button type="submit">{{button}}</button>
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-primary">{{button}}</button>
         </form>
     </body>
 </html>
