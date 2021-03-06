@@ -13,6 +13,7 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'sitspots/css/zooStyles.css' %}">
     <script src="{% static 'sitspots/js/zoo.js' %}"></script>
+    <script>csrf='{% csrf_token %}'.split('value="')[1].split('"')[0]</script>
     <title>Document</title>
 </head>
 <body>
@@ -87,7 +88,7 @@
             <div class="animalsandplants">
                 <h3>Birds/Plants found in this Garden: ​</h3>
                 <div id="animalsandplants">
-                    {% include 'sitspots/californiaGarden.html' %}
+                    {% include sub %}
                 </div>
             </div>
         </div>
