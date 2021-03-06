@@ -8,10 +8,10 @@
     {% comment %}
     For bootstrap
     {% endcomment %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     {% load static %}
     <link rel="stylesheet" href="{% static 'sitspots/css/zooStyles.css' %}">
-    <!-- <link rel="stylesheet" href="{% static 'sitspots/css/style.css' %}"> -->
     <script src="{% static 'sitspots/js/scripts.js' %}"></script>
     <title>Document</title>
 </head>
@@ -57,7 +57,7 @@
     </header> -->
     <div class="tree-image">
         <div class="content">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light menucolor">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -84,25 +84,10 @@
                     </ul>
                 </div>
             </nav>
-            <div class="species-container">
-                <div class="species-name">
-                    <p>Anna's Hummingbird</p>
-                </div>
-                <div class="species-photo">
-                    <div class="species-image">
-                        <img src="{% static 'sitspots/img/anna-s-hummingbird-adult-male-kyle-blaney_orig.jpeg' %}">
-                        <p>Male//photo by Kyle Blaney</p>
-                    </div>
-                    <div class="species-image">
-                        <img src="{% static 'sitspots/img/anna-s-hummingbird-female-ryan-winkleman_orig.jpeg' %}">
-                        <p>female//photo by Ryan Winkleman</p>
-                    </div>
-                </div>
-                <div class="species-info">
-                    <p>Description : Tiny green and gray bird, with a straght short bill and a fairly broad tail. Which extend longer than the wingtips.</p>
-                    <p>Diet: Nectar from th flowering plants including current and gooseberry nectar are the main diet. They also can be found to eat a variety of insects, the smaller ones ones that can be found on a web or flower.</p> 
-                    <p>Habitat: Common in urban and suburban settings. Other habitas they can be found in are chaparral,costal srubs and open woodlands.</p>
-                    <p>Terrestrial Biomes: </p>
+            <div class="animalsandplants">
+                <h3>Birds/Plants found in this Garden: ​</h3>
+                <div id="animalsandplants">
+                    {% include 'sitspots/californiaGarden.html' %}
                 </div>
             </div>
         </div>
