@@ -22,6 +22,8 @@ class CommentForm(forms.ModelForm):
         fields = ('author','content')
 
 class ReplyForm(forms.ModelForm):
+    author = forms.CharField(max_length=255, required=True)
+    content = forms.CharField(max_length=255, required=True)
     class Meta: 
         model = Reply
         fields = ('author','content')
