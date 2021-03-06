@@ -1,6 +1,7 @@
-
-
-
+*{
+    padding: 0px;
+    margin: 0px;
+}
 .tree-image{
     background-image: url(../img/1248253927.jpeg);
     background-size: cover;
@@ -10,21 +11,28 @@
     background-position: center;
 }
 .content{
-    background-color: green;
+    background-color: #c9f8a9;
     width: 80%;
     margin: auto;
     
     padding-bottom: 30px;
 }
+h3{
+    padding: 20px;
+}
 .species-container{
+    padding: 30px;
     display: flex;
     flex-wrap: wrap;
-
+    border-bottom: 2px solid #b1e091;
+    margin: 20px;
 }
 .species-photo{
     display:flex;
     flex-direction:column;
+    align-items: center;
     flex-basis: 50%;
+    gap: 20px;
 }
 .species-photo img{
     width: 300px;
@@ -39,3 +47,10 @@
 .species-name{
     flex-basis: 100%;
 }
+.menucolor{
+    background: #c9f8a9;
+    background: -moz-linear-gradient(top, #b1e091 0%, #c9f8a9 50%, #b1e091 100%);
+    background: -webkit-linear-gradient(top, #b1e091 0%, #c9f8a9 50%, #b1e091 100%);
+    background: linear-gradient(to bottom, #b1e091 0%, #c9f8a9 50%, #b1e091 100%);
+}
+
