@@ -60,10 +60,12 @@ def storiesck(request):
 
 def stories_read_more(request, numb):
     this_post = Post.objects.get(id=numb)
-    form = CommentForm(request.POST)
+    comment_form = CommentForm()
+    reply_form = ReplyForm()
     context ={
         "post" : this_post,
-        "comment_form" : form,
+        "comment_form" : comment_form,
+        "reply_form" : reply_form,
     }
     print("*"*40)
     print(this_post.image.url)

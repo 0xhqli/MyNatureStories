@@ -117,14 +117,14 @@
 /* ######################################################### */
 ul.read_more{
   list-style-type: none;
-
+  background-color: #c9f8a9;
+  padding: 20px 100px;
 }
 .read_more_img{
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px 0px 50px 0px;
-
 }
 
 .tag{
@@ -135,14 +135,15 @@ ul.read_more{
   padding: 0px 5px;
   color: black;
 }
-
+.comment_list{
+  list-style-type: none;
+}
 .comment_row{
   padding: 5px;
-  background-color: #f8f9fa;
+  background-color: #acd493;
   border-radius: .50rem;
-  border: 2px solid white;
+  border: 2px solid #acd493;
 }
-
 .comment_profile_pic{
   width: 50px;
   height: 50px;
@@ -160,7 +161,20 @@ ul.read_more{
 }
 .indented_replies{
   padding: 5px;
-  background-color: #f8f9fa;
+  background-color: #acd493;
   border-radius: .50rem;
-  border: 2px solid white;
+  border: 2px solid #acd493;
+}
+.form_row{
+  background-color: #acd493;
+  border-radius: .50rem;
+  border: 1px solid rgb(156, 156, 156);
+  padding: 10px 10px 10px 20px;
+}
+.add_comment_form{
+  /* background-color: #d6f1c6; */
+  border-radius: .50rem;
+  border: 1px solid rgb(156, 156, 156);
+  padding: 10px;
+  margin-top: 20px;
 }
