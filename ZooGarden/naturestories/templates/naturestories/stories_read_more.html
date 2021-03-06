@@ -13,7 +13,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
             {% load static %}
         <link rel="stylesheet" href="{% static 'naturestories/css/style.css' %}">
-        <script src="{% static 'naturestories/js/scripts.js' %}"></script>
+        <script src="{% static 'naturestories/js/postsdetails.js' %}"></script>
         {%load crispy_forms_tags %}
     </head>
     <body class="container-fluid" data-media-url="{% get_media_prefix %}">
@@ -53,7 +53,7 @@
                         <h5>Comments</h5>
                         <ul class="comment_list">
                             {% for comment in post.comments.all %}
-                                <li class="row comment_row">
+                                <li class="row comment_row border">
                                     <div class="col col-lg-1 ">
                                         <div class="comment_profile_pic"></div>
                                     </div>
@@ -64,7 +64,20 @@
                                         <a href="#">Reply</a>
                                     </div>
                                 </li>
-                                <li class="form_row">
+                                {% for reply in comment.replies.all %}
+                                <li class="row reply_row">
+                                    <div class="col col-lg-1 "></div>
+                                    <div class="col col-lg-11 border">
+                                        <div class="row indented_replies">
+                                            <div class="col col-lg-1"><div class="comment_profile_pic"></div></div>
+                                            <div class="col col-lg-11 comment_content">{{reply.author}}: {{reply.content}}</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                {% endfor %}
+                                <li class="row reply_row">
+                                    <div class="col col-lg-1 "></div>
+                                    <div class="col col-lg-11 form_row">
                                     <form class="form-inline" action="/naturestories/new_reply" method="POST">
                                         {% csrf_token %}
                                         <input type="hidden" name="post_id" value="{{post.id}}">
@@ -77,18 +90,8 @@
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-sm">Submit Reply</button>
                                     </form>
-                                </li>
-                                {% for reply in comment.replies.all %}
-                                <li class="row reply_row">
-                                    <div class="col col-lg-1 "></div>
-                                    <div class="col col-lg-11">
-                                        <div class="row indented_replies">
-                                            <div class="col col-lg-1"><div class="comment_profile_pic"></div></div>
-                                            <div class="col col-lg-11 comment_content">{{reply.author}}: {{reply.content}}</div>
-                                        </div>
                                     </div>
                                 </li>
-                                {% endfor %}
                             {% endfor %}
                         </ul>
                     </li>

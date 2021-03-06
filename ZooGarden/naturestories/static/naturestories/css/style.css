@@ -178,3 +178,7 @@ ul.read_more{
   padding: 10px;
   margin-top: 20px;
 }
+.border{
+  border-radius: .50rem;
+  border: 1px solid rgb(156, 156, 156);
+}
