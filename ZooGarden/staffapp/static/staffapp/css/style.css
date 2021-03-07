@@ -1,11 +1,19 @@
 *{
     margin: 0px;
     padding: 0px;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
 }
 ul{
     margin-left: 20px;
 }
 li{
     margin-left: 20px;
+}
+.admintables{
+    height: 300px;
+    overflow: scroll;
+    border: 2px solid lightgrey;
+}
+.adtdwidth{
+    width: 500px;
 }
