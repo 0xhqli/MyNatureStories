@@ -18,9 +18,16 @@ class UserCreationForm(forms.ModelForm):
     # fields, plus a repeated password."""
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput)
-    is_employee= forms.BooleanField(required=False)
-    is_staff= forms.BooleanField(required=False)
-
+    choices=[
+        ('Newcomer','Newcomer'),
+        ('Hobbyist','Hobbyist'),
+        ('Employee','Employee'),
+        ('admin','Admin'),
+    ]
+    account_type=forms.ChoiceField(choices=choices)
+    # is_employee= forms.BooleanField(required=False)
+    # is_hobbyist= forms.BooleanField(required=False)
+    # is_staff= forms.BooleanField(required=False)
     class Meta:
         model = MyUser
         fields = ('email','username','first_name','last_name')
@@ -38,18 +45,24 @@ class UserCreationForm(forms.ModelForm):
     def save(self, commit=True):
         # Save the provided password in hashed format
         print("*"*60)
-        is_employee=self.cleaned_data.get("is_employee")
-        is_staff=self.cleaned_data.get("is_staff")
+        accountlvl=self.cleaned_data.get("account_type")
         user = super().save(commit=False)
         user.set_password(self.cleaned_data["password1"])
-        print(is_employee)
-        print(is_staff)
-        if is_employee:
-            print("employee")
-            if is_staff:
-                user.is_staff = True
-                user.is_superuser=True
-        if commit:
+        print(accountlvl)
+        grp=None
+        if accountlvl=='admin':
+            user.is_staff = True
+            user.is_superuser=True
+            grp=Group.objects.get(name='Employee')
+        elif accountlvl=='Employee':
+            grp=Group.objects.get(name='Employee')
+        elif accountlvl=='Hobbyist':
+            grp=Group.objects.get(name='Hobbyist')
+        elif accountlvl=='Newcomer':
+            grp=Group.objects.get(name='Newcomer')
+        if commit and grp:
+            user.save()
+            user.groups.add(grp)
             user.save()
         return user
 
