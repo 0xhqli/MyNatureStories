@@ -16,7 +16,7 @@ def root(request):
     return redirect('/accounts/login')
 
 @login_required(login_url='/accounts/login')
-# @permission_required('SitSpots.add_MyUser',raise_exception=True) 
+@permission_required('staffapp.add_myuser',raise_exception=True) 
 def register(request):
     print(request.POST)
     form = UserCreationForm()
@@ -28,7 +28,7 @@ def register(request):
     return render(request, "staff/adminforms.html", context)
 
 @login_required(login_url='/accounts/login')
-# @permission_required('SitSpots.add_MyUser',raise_exception=True) 
+@permission_required('staffapp.add_MyUser',raise_exception=True) 
 def regchk(request):
     form = UserCreationForm(request.POST)
     if form.is_valid():
@@ -47,9 +47,12 @@ def adminpage(request):
     flaggedcomments=list(Comment.objects.filter(flagged=False))
     flaggedreplies=list(Reply.objects.filter(flagged=False))
     context={
-        'flaggedforreview': flaggedposts+flaggedcomments+flaggedreplies,
+        'pflaggedforreview': flaggedposts,
+        'cflaggedforreview': flaggedcomments,
+        'rflaggedforreview': flaggedreplies,
         'userslist': MyUser.objects.all(),
-        'tags': Tag.objects.all()
+        'tags': Tag.objects.all(),
+        'zones': Zone.objects.all(),
     }
     return render(request, "staff/adminpage.html", context)
 

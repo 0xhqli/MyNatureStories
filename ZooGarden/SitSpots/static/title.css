@@ -1,0 +1,16 @@
+.ti{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.brd{
+    flex-basis: 33%;
+    /* outline: 1px solid red; */
+    height: 75px;
+}
+.right{
+    text-align: right;
+}
+.centered{
+    padding: 20px;
+}
