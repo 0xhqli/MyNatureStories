@@ -16,6 +16,7 @@
         {%load crispy_forms_tags %}
     </head>
     <body class="container">
+        {% include "header.html"%}
         {% if messages %}
             <ul class="messages">    
                 {% for message in messages %}    

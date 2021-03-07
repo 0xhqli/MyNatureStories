@@ -15,6 +15,7 @@
         <script src="{% static 'staffapp/js/scripts.js' %}"></script>
     </head>
     <body>
+        {% include "header.html"%}
         <div class="container">
             {% if messages %}
                 <ul class="messages">    
@@ -25,24 +26,140 @@
             {% endif %}
             <div class="flaggedforreview">
                 <p>Flagged for review:</p>
-                <div class="flaggedls">
+                <div class="flaggedstuff admintables">
+                    <table class="flaggedls adtb">
+                        <thead>
+                            <tr class='adtr'>
+                                <th class="adtdwidth">
+                                    Content
+                                </th>
+                                <th class="adtdwidth">
+                                    Link
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for flagged in pflaggedforreview %}
+                                <tr>
+                                    <td>
+                                        {{flagged.content|truncatechars:10}}
+                                    </td>
+                                    <td>
+                                        <a href="/naturestories/{{flagged.id}}">link</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            {% for flagged in cflaggedforreview %}
+                                <tr>
+                                    <td>
+                                        {{flagged.content|truncatechars:10}}
+                                    </td>
+                                    <td>
+                                        <a href="/naturestories/{{flagged.post.id}}">link</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            {% for flagged in rflaggedforreview %}
+                                <tr>
+                                    <td>
+                                        {{flagged.content|truncatechars:10}}
+                                    </td>
+                                    <td>
+                                        <a href="/naturestories/{{flagged.comment.post.id}}">link</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div class="userslist">
                 <p>User list:</p>
-                <div class="userls">
+                <div class="userls admintables">
+                    <table class="usrlst adtb">
+                        <thead>
+                            <tr class='adtr'>
+                                <th class="adtdwidth">
+                                    User
+                                </th>
+                                <th class="adtdwidth">
+                                    Link
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for user in userslist %}
+                                <tr>
+                                    <td>
+                                        {{user.username|truncatechars:50}}
+                                    </td>
+                                    <td>
+                                        <a href="/naturestories">drf</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
                 </div>
                 <a href="/accounts/register" class="addbutton">Add a New User</a>
             </div>
             <div class="tags">
                 <p>Tags:</p>
-                <div class="tagls">
+                <div class="tagls admintables">
+                    <table class="taglst adtb">
+                        <thead>
+                            <tr class='adtr'>
+                                <th class="adtdwidth">
+                                    Tags
+                                </th>
+                                <th class="adtdwidth">
+                                    Link
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for tag in tags %}
+                                <tr>
+                                    <td>
+                                        {{tag.name}}
+                                    </td>
+                                    <td>
+                                        <a href="/naturestories">drf</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
                 </div>
                 <a href="/accounts/tags/new" class="addbutton">Add a New Tag</a>
             </div>
             <div class="zone">
                 <p>Zones:</p>
-                <div class="zonels">
+                <div class="zonels admintables">
+                    <table class="zoneslst adtb">
+                        <thead>
+                            <tr class='adtr'>
+                                <th class="adtdwidth">
+                                    Zones
+                                </th>
+                                <th class="adtdwidth">
+                                    Link
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for zone in zones %}
+                                <tr>
+                                    <td>
+                                        {{zone.name|truncatechars:50}}
+                                    </td>
+                                    <td>
+                                        <a href="/naturestories">drf</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
                 </div>
                 <a href="/accounts/zones/new" class="addbutton">Add a New Tag</a>
             </div>
