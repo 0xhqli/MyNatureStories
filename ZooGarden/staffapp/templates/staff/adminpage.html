@@ -25,6 +25,7 @@
                     {% endfor %}
                 </ul>
             {% endif %}
+            {% if perms.SitSpots.delete_post %}
             <div class="flaggedforreview">
                 <p>Flagged for review:</p>
                 <div class="flaggedstuff admintables">
@@ -74,6 +75,8 @@
                     </table>
                 </div>
             </div>
+            {% endif %}
+            {% if perms.staffapp.delete_myuser %}
             <div class="userslist">
                 <p>User list:</p>
                 <div class="userls admintables">
@@ -104,6 +107,8 @@
                 </div>
                 <a href="/accounts/register" class="addbutton">Add a New User</a>
             </div>
+            {% endif %}
+            {% if perms.SitSpots.change_tag %}
             <div class="tags">
                 <p>Tags:</p>
                 <div class="tagls admintables">
@@ -134,6 +139,8 @@
                 </div>
                 <a href="/accounts/tags/new" class="addbutton">Add a New Tag</a>
             </div>
+            {% endif %}
+            {% if perms.SitSpots.delete_zone %}
             <div class="zone">
                 <p>Zones:</p>
                 <div class="zonels admintables">
@@ -164,6 +171,7 @@
                 </div>
                 <a href="/accounts/zones/new" class="addbutton">Add a New Tag</a>
             </div>
+            {% endif %}
         </div>
     </body>
 </html>
