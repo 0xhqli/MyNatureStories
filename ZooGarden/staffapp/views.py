@@ -28,7 +28,7 @@ def register(request):
     return render(request, "staff/adminforms.html", context)
 
 @login_required(login_url='/accounts/login')
-@permission_required('staffapp.add_MyUser',raise_exception=True) 
+@permission_required('staffapp.add_myuser',raise_exception=True) 
 def regchk(request):
     form = UserCreationForm(request.POST)
     if form.is_valid():
@@ -80,6 +80,8 @@ def loginchk(request):
         messages.error(request, f"<div class='error'><ul><li>Invalid Credentials</li></ul></div>")
     return redirect('/accounts/login')
 
+@login_required(login_url='/accounts/login')
+@permission_required('SitSpots.add_tag',raise_exception=True) 
 def tags(request):
     print(request.POST)
     form = tagForm()
@@ -90,6 +92,8 @@ def tags(request):
     }
     return render(request, "staff/adminforms.html", context)
 
+@login_required(login_url='/accounts/login')
+@permission_required('SitSpots.add_tag',raise_exception=True) 
 def mktags(request):
     form = tagForm(request.POST)
     if form.is_valid():
@@ -102,6 +106,8 @@ def mktags(request):
             messages.error(request, f"<div class='error'>{x.capitalize().replace('_',' ')}{y}</div>")
         return redirect('/accounts/tags/new')
 
+@login_required(login_url='/accounts/login')
+@permission_required('SitSpots.add_zone',raise_exception=True) 
 def zones(request):
     print(request.POST)
     form = zoneForm()
@@ -112,6 +118,8 @@ def zones(request):
     }
     return render(request, "staff/adminforms.html", context)
 
+@login_required(login_url='/accounts/login')
+@permission_required('SitSpots.add_zone',raise_exception=True) 
 def mkzones(request):
     form = zoneForm(request.POST)
     if form.is_valid():
