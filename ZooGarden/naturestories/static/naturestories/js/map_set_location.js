@@ -45,4 +45,5 @@ function getLocation() {
         });
     }
 }
-$("document").ready(()=>{marker_set_loc();getLocation();})
+// $("document").ready()
+var user_get_location=()=>{console.log("getting location");marker_set_loc();getLocation();}
