@@ -9,10 +9,10 @@ class PostForm(forms.ModelForm):
     # website = forms.URLField(required=False)
     # image = forms.ImageField(required=False, upload_to="static/naturestories/img")
     # zone = forms.ModelChoiceField(queryset= Zone.objects.all())
-    tags = forms.ModelChoiceField(queryset= Tag.objects.all())
+    tags = forms.ModelChoiceField(queryset= Tag.objects.all(),required=False)
     add_a_location= forms.BooleanField(required=False)
-    lng= forms.DecimalField(widget=forms.HiddenInput())
-    lat= forms.DecimalField(widget=forms.HiddenInput())
+    lng= forms.DecimalField(widget=forms.HiddenInput(),required=False)
+    lat= forms.DecimalField(widget=forms.HiddenInput(),required=False)
     class Meta: 
         model = Post
         fields = ('title','author','sitspot','zone','image','tags','content', 'website',)

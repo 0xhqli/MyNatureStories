@@ -190,6 +190,11 @@ ul.read_more{
   justify-content: space-between;
 }
 .post_map{
+  height: 250px;
+  width: 50%;
+  margin: 15px 0px 15px 0px;
+}
+.mkpost_map{
   height: 600px;
   width: 75%;
   margin: 15px 0px 15px 0px;
