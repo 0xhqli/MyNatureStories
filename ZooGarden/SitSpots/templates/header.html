@@ -4,19 +4,16 @@
     <nav class="navbar navbar-light bg-light justify-content-between">
         <div class="ti">
             <div class="brd">
-<<<<<<< HEAD
                 <a class="navbar-brand" href="#">
                     <img src="https://s36593.pcdn.co/wp-content/uploads/2021/02/zoo-logo-white.svg" width="30" height="30" alt="" class="zoo_logo">
                 </a>
-=======
-                <a href="/"><h5></h5></a>
->>>>>>> 7c74ec61cadff49590ac88f7fcccf315adbd5462
             </div>
             <div class="title brd centered">
                 <h1>A Sit Spot in LA Zoo</h1>
             </div>
             <div class="brd right">
                 <span class="">
+                    <a href="#">En Español</a> |
                     {% if request.user.is_authenticated %}
                     <span>Welcome {{request.user.username}}! | <a href="/accounts/logout">Logout</a></span>
                     {% else %}
