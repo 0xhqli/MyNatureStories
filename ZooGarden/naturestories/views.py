@@ -9,6 +9,7 @@ def stories_main(request):
     posts = Post.objects.all().order_by("-created_at")
     context ={
         "posts" : posts,
+        "Zones": Zone.objects.all()
     }
     return render(request, "naturestories/stories_main.html", context)
 

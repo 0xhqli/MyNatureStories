@@ -57,6 +57,8 @@ def adminpage(request):
     return render(request, "staff/adminpage.html", context)
 
 def loginpage(request):
+    if request.user.is_authenticated:
+        return redirect("/accounts")
     print(request.POST)
     form = loginForm()
     context = { 
