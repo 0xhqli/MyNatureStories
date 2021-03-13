@@ -5,7 +5,6 @@ from staffapp.models import *
 from .forms import *
 import random, math 
 
-
 def stories_main(request):
     posts = Post.objects.all().order_by("-created_at")
     context ={
