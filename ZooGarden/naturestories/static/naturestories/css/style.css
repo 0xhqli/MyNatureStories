@@ -150,6 +150,9 @@ ul.read_more{
   border-radius: 50%;
   background-color: aquamarine;
   border: 1px rgb(92, 92, 92) solid;
+  background-position: center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
 }
 .comment_content{
   display: flex;
