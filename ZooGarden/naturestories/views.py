@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from SitSpots.models import *
 from staffapp.models import *
 from .forms import *
-
+import random, math 
 
 def stories_main(request):
     posts = Post.objects.all().order_by("-created_at")
@@ -80,7 +80,8 @@ def new_comment(request):
         author = form.cleaned_data.get("author")
         content = form.cleaned_data.get("content")
         post = Post.objects.get(id = request.POST["post_id"])
-        new_comment = Comment.objects.create(author=author, content=content, post=post)
+        icon = math.floor(random.random()*5)+1
+        new_comment = Comment.objects.create(author=author, content=content, post=post, icon=icon)
         new_comment.save()
         return redirect(f'/naturestories/{request.POST["post_id"]}')    
     else:
@@ -138,7 +139,8 @@ def new_comment_ajax(request):
         author = form.cleaned_data.get("author")
         content = form.cleaned_data.get("content")
         post = Post.objects.get(id = request.POST["post_id"])
-        new_comment = Comment.objects.create(author=author, content=content, post=post)
+        icon = math.floor(random.random()*5)+1
+        new_comment = Comment.objects.create(author=author, content=content, post=post, icon=icon)
         new_comment.save()
         reply_form = ReplyForm()
         context ={
