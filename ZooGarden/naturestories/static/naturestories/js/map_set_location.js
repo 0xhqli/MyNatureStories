@@ -36,6 +36,7 @@ function initMap(){
         var l=map.getCenter();
         set_marker(l.lat(),l.lng())
     }
+    marker_set_loc();
 }
 function getLocation() {
     if (navigator.geolocation) {
