@@ -50,6 +50,7 @@ class Comment(models.Model):
     flagged=models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    icon = models.PositiveSmallIntegerField(default=1)
     def __str__(self):
         return f"comment id {self.id} by {self.author}"
     #replies
