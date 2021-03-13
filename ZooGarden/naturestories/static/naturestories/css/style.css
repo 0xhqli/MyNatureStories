@@ -182,3 +182,10 @@ ul.read_more{
   border-radius: .50rem;
   border: 1px solid rgb(156, 156, 156);
 }
+.flex-sp-btw{
+  display: flex;
+  justify-content: space-between;
+}
+*{
+  /* outline: 1px dotted red; */
+}

@@ -33,7 +33,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <div class="collapse navbar-collapse flex-sp-btw" id="navbarTogglerDemo02">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item">
                             <a class="nav-link disabled" href="#">Choose a Garden to Explore: </a>
@@ -41,24 +41,11 @@
                         <li class="nav-item">
                             <a class="nav-link zones" href="#" active="1" loclink="all">All Gardens<span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link zones" href="#" active="0" loclink="California Garden">California Garden</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link zones" href="#" active="0" loclink="Baja California Garden">Baja California Garden</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link zones" href="#" active="0" loclink="North America Garden">North America Garden</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link zones" href="#" active="0" loclink="Australia Garden">Australia Garden</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link zones" href="#" active="0" loclink="Africa Garden">Africa Garden</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link zones" href="#" active="0" loclink="South America Garden">South America Garden</a>
-                        </li>
+                        {% for zone in Zones %}
+                            <li class="nav-item">
+                                <a class="nav-link zones" href="#" active="0" loclink="{{zone.name}}">{{zone.name}}</a>
+                            </li>
+                        {% endfor %}
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search">
