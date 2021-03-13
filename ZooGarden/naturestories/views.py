@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
+from django.contrib import messages
 from SitSpots.models import *
 from staffapp.models import *
 from .forms import *
 import random, math 
+from PIL import Image
 
 def stories_main(request):
     posts = Post.objects.all().order_by("-created_at")
@@ -52,8 +54,23 @@ def storiesck(request):
         image = form.cleaned_data.get("image")
         zone = form.cleaned_data.get("zone")
         user = form.cleaned_data.get("user")
-        new_post = Post.objects.create(author=author, user=user, title=title, content=content, website=website, image=image, zone=zone, sitspot=sitspot)
+        if 'add_a_location' in request.POST:
+            lat=form.cleaned_data.get("lat")
+            lng=form.cleaned_data.get("lng")
+            new_post = Post.objects.create(author=author, user=user, title=title, content=content, website=website, image=image, zone=zone, sitspot=sitspot,lat=lat,lng=lng)
+        else:
+            new_post = Post.objects.create(author=author, user=user, title=title, content=content, website=website, image=image, zone=zone, sitspot=sitspot)
         new_post.save()
+        print(new_post.image.url)
+        #exif strip begin
+        uu=new_post.image.url[1:]
+        print(uu)
+        image= Image.open(new_post.image)
+        data = list(image.getdata())
+        image_without_exif = Image.new(image.mode, image.size)
+        image_without_exif.putdata(data)
+        image_without_exif.save(uu)
+        #exif strip end
         return redirect("/naturestories")
     else:
         for x, y in form.errors.items():
@@ -71,6 +88,13 @@ def stories_read_more(request, numb):
     }
     print("*"*40)
     print(this_post.image.url)
+    # uu=this_post.image.url[1:]
+    # print(uu)
+    # image= Image.open(this_post.image)
+    # data = list(image.getdata())
+    # image_without_exif = Image.new(image.mode, image.size)
+    # image_without_exif.putdata(data)
+    # image_without_exif.save(uu)
     return render(request, "naturestories/stories_read_more.html", context)
     
 def new_comment(request):
