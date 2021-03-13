@@ -150,6 +150,9 @@ ul.read_more{
   border-radius: 50%;
   background-color: aquamarine;
   border: 1px rgb(92, 92, 92) solid;
+  background-position: center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
 }
 .comment_content{
   display: flex;
@@ -185,6 +188,16 @@ ul.read_more{
 .flex-sp-btw{
   display: flex;
   justify-content: space-between;
+}
+.post_map{
+  height: 250px;
+  width: 50%;
+  margin: 15px 0px 15px 0px;
+}
+.mkpost_map{
+  height: 600px;
+  width: 75%;
+  margin: 15px 0px 15px 0px;
 }
 *{
   /* outline: 1px dotted red; */

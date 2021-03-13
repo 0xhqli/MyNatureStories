@@ -46,6 +46,13 @@
                     <li><h5>Author</h5> {{post.author}}</li>
                     <li><h5>Sitspot</h5> {{post.sitspot}}</li>
                     <li><h5>Zone</h5> {{post.zone.name}}</li>
+                    {% if post.lat and post.lng %}
+                    <script>
+                        var lati={{post.lat}};
+                        var lngi={{post.lng}};
+                    </script>
+                    <div id="map" class="post_map"></div>
+                    {% endif %}
                     {% if post.website %}
                     <li><h5>Website</h5> {{post.website}}</li>
                     {% endif %}
@@ -75,5 +82,10 @@
                 </ul>
             </div>
         </div>
+        <script src="{% static 'naturestories/js/map_post.js' %}"></script>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHTK7gOOfFogN7gFbJYMk-bd5BCYIyO7s&callback=initMap&libraries=&v=weekly"
+            async
+        ></script>
     </body>
 </html>

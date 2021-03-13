@@ -20,6 +20,8 @@ class Post(models.Model):
     zone = models.ForeignKey(Zone, related_name="zone_posts", on_delete=models.SET_NULL, null=True)
     sitspot = models.CharField(max_length=255)
     flagged=models.BooleanField(default=False)
+    lng=models.DecimalField(max_digits=25, decimal_places=18, default=None, null=True)
+    lat=models.DecimalField(max_digits=25, decimal_places=18, default=None, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     def __str__(self):

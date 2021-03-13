@@ -41,79 +41,15 @@
             <form action="/naturestories/new_story" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form|crispy }}
+                <div id="map" class="mkpost_map"></div>  
                 <button type="submit" value="Submit" class="btn btn-success">Share Your Story!</button>
                 <a value="Cancel" class="btn btn-danger" href="/naturestories">Cancel and Go Back</a>
-                <div id="map"></div>  
             </form>
         </div>
-        <script>
-            function initMap(){
-                // MAP OPTIONS
-                var options = {
-                    zoom : 16,
-                    center : {lat: 34.1480, lng: -118.2860}
-                }
-                // NEW MAP
-                var map = new google.maps.Map(document.getElementById('map'),options);
-    
-                google.maps.event.addListener(map, 'click', 
-                function(event){
-                    editMarker({coords:event.latLng});
-                });
-                var markers =[
-                    {
-                        coords : {lat: 34.1480,lng: -118.2841},
-                        iconImage : '/static/naturestories/img/ezgif-3-c836094dc4ce.gif',
-                        content : '<h1>Your Sit Spot is here</h1>'
-                    }
-                ];
-                var marker;
-                addMarker(markers[0]);
-    
-                google.maps.event.addListener(marker, 'dragend', function() {
-                    console.log("Hai says Lat Lng is !")
-                    console.log(marker.getPosition().lat(),
-                    marker.getPosition().lng())
-                });
-                //ADD MARKER FUNCTION:
-                function addMarker(props){
-                    marker = new google.maps.Marker({
-                        position : props.coords,
-                        map : map,
-                        draggable: true,
-                        title:"Drag me!"
-                        // icon : props.iconImage
-                    });
-    
-                    //CHECK FOR CUSTOM ICON
-                    if(props.iconImage){
-                        //Set icon image
-                        marker.setIcon(props.iconImage);
-                    }
-                    //Check content
-                    if(props.content){
-                        var infoWindow = new google.maps.InfoWindow({
-                            content: props.content
-    
-                        });
-                        
-                        marker.addListener('click', function(){
-                            infoWindow.open(map, marker);
-                        });  
-                    }
-                }
-            }
-        </script>
+        <script src="{% static 'naturestories/js/map_set_location.js' %}"></script>
         <script
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHTK7gOOfFogN7gFbJYMk-bd5BCYIyO7s&callback=initMap&libraries=&v=weekly"
             async
         ></script>
-        <style>
-            #map{
-                height: 600px;
-                width: 75%;
-                margin: 15px 0 15px 0;
-            }
-        </style>
     </body>
 </html>

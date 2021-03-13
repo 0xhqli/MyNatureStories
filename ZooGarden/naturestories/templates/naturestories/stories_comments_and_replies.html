@@ -2,7 +2,7 @@
 {% for comment in post.comments.all|dictsortreversed:"created_at" %}
     <li class="row comment_row border">
         <div class="col col-lg-1 ">
-            <div class="comment_profile_pic"></div>
+            <div class="comment_profile_pic" style="background-image: url('../static/naturestories/img/icon_{{comment.icon}}.jpg');"></div>
         </div>
         <div class="col col-lg-9 comment_content">
             {{comment.author}}: {{comment.content}}
