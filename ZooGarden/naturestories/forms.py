@@ -10,9 +10,12 @@ class PostForm(forms.ModelForm):
     # image = forms.ImageField(required=False, upload_to="static/naturestories/img")
     # zone = forms.ModelChoiceField(queryset= Zone.objects.all())
     tags = forms.ModelChoiceField(queryset= Tag.objects.all())
+    add_a_location= forms.BooleanField(required=False)
+    lng= forms.DecimalField(widget=forms.HiddenInput())
+    lat= forms.DecimalField(widget=forms.HiddenInput())
     class Meta: 
         model = Post
-        fields = ('title','author','sitspot','zone','image','tags','content', 'website', )
+        fields = ('title','author','sitspot','zone','image','tags','content', 'website',)
 
 class CommentForm(forms.ModelForm):
     author = forms.CharField(max_length=255, required=True)
