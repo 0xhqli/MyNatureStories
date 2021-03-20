@@ -11,7 +11,7 @@ def stories_main(request):
     posts = Post.objects.all().order_by("-created_at")
     context ={
         "posts" : posts,
-        "Zones": Zone.objects.all()
+        "Zones": Zone.objects.exclude(name="From Around The World, At Home!")
     }
     return render(request, "naturestories/stories_main.html", context)
 
