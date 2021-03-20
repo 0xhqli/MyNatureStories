@@ -6,7 +6,8 @@
 .brd{
     flex-basis: 33%;
     /* outline: 1px solid red; */
-    height: 75px;
+    height: 80px;
+    /* height: 150px; */
 }
 .right{
     text-align: right;
@@ -16,6 +17,24 @@
     padding: 20px;
 }
 .zoo_logo{
-    height: 40px;
+    height: 50px;
     width: auto;
+}
+.zoo_logov1{
+    height: 85px;
+    width: auto;
+}
+.logo{
+    padding-left: 3%;
+}
+.logintitle{
+    padding-right: 3%;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+}
+.baseline{
+    display:  flex;
+    vertical-align: baseline;
 }

@@ -67,17 +67,17 @@ def findYourSitSpot(request):
     context={
         'route':"Find your sitspot"
     }
-    return render(request, "sitspots/template.html",context)
+    return render(request, "sitspots/sitspots.html",context)
 def about(request):
     context={
         'route':"about"
     }
-    return render(request, "sitspots/template.html",context)
+    return render(request, "sitspots/about.html",context)
 def contact(request):
     context={
         'route':"contact"
     }
-    return render(request, "sitspots/template.html",context)
+    return render(request, "sitspots/contact.html",context)
 
 
 

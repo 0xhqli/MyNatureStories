@@ -43,9 +43,12 @@
                         </li>
                         {% for zone in Zones %}
                             <li class="nav-item">
-                                <a class="nav-link zones" href="#" active="0" loclink="{{zone.name}}">{{zone.name}}</a>
+                                <a class="nav-link zones" href="#" active="0" loclink="{{zone.name}}" {% if zone.name == "From Around The World, At Home!" %} style=' color: orange; ' {% endif %}>{{zone.name}}</a>
                             </li>
                         {% endfor %}
+                        <li class="nav-item">
+                            <a class="nav-link zones" href="#" active="0" loclink="From Around The World, At Home!" style=' color: orange; '>From Around The World, At Home!</a>
+                        </li>
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search">
