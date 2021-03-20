@@ -1,40 +1,60 @@
-.ti{
+.tiri{
+    padding: 0px;
+    margin: 0px;
     width: 100%;
     display: flex;
     justify-content: center;
 }
 .brd{
+    padding: 0px;
+    margin: 0px;
     flex-basis: 33%;
     /* outline: 1px solid red; */
     height: 80px;
     /* height: 150px; */
 }
 .right{
+    padding: 0px;
+    margin: 0px;
     text-align: right;
 }
 .centered{
+    padding: 0px;
+    margin: 0px;
     text-align: center;
     padding: 20px;
 }
 .zoo_logo{
+    padding: 0px;
+    margin: 0px;
     height: 50px;
     width: auto;
 }
 .zoo_logov1{
+    padding: 0px;
+    margin: 0px;
     height: 85px;
     width: auto;
 }
 .logo{
+    padding: 0px;
+    margin: 0px;
     padding-left: 3%;
 }
 .logintitle{
+    padding: 0px;
+    margin: 0px;
     padding-right: 3%;
 }
 .col{
+    padding: 0px;
+    margin: 0px;
     display: flex;
     flex-direction: column;
 }
 .baseline{
+    padding: 0px;
+    margin: 0px;
     display:  flex;
     vertical-align: baseline;
 }
