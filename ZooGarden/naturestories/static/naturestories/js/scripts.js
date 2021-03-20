@@ -11,7 +11,9 @@ function attach(){
         console.log(ifbit)
         if(!ifbit){
             $('.zones').attr('active','0')
+            $('.zones').removeClass('active')
             $(this).attr('active','1')
+            $(this).addClass('active')
             let form={}
             form['csrfmiddlewaretoken']=csrf
             form['zone']=loc
@@ -40,6 +42,7 @@ function attach(){
         form['search']=search
         console.log(form);
         $('.zones').attr('active','0')
+        $('.zones').removeClass('active')
         $.ajax({
             type: "POST",
             url: '/naturestories/ajax_search_stories',
