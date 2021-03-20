@@ -3,15 +3,17 @@
 <div class="header">
     <nav class="navbar navbar-light bg-light justify-content-between">
         <div class="ti">
-            <div class="brd">
-                <a class="navbar-brand" href="#">
-                    <img src="https://s36593.pcdn.co/wp-content/uploads/2021/02/zoo-logo-white.svg" width="30" height="30" alt="" class="zoo_logo">
+            <div class="brd logo">
+                <a class="navbar-brand" href="https://www.lazoo.org/">
+                    <img src="{% static 'sitspots/img/logo2-2.png' %}" width="30" height="30" alt="" class="zoo_logov1">
                 </a>
             </div>
-            <div class="title brd centered">
-                <h1>A Sit Spot in LA Zoo</h1>
+            <div class="title brd centered dircol">
+                <!-- <img src="{% static 'sitspots/img/logo2.png' %}" width="30" height="30" alt="" class="zoo_logo"> -->
+                <!-- <h3 style="font-family: 'Times New Roman', Times, serif;"> presents </h3> -->
+                <h1 style="font-family: 'Times New Roman', Times, serif;">A Sit Spot in LA Zoo</h1>
             </div>
-            <div class="brd right">
+            <div class="brd right logintitle">
                 <span class="">
                     <a href="#">En Español</a> |
                     {% if request.user.is_authenticated %}
