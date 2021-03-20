@@ -39,15 +39,15 @@
                             <a class="nav-link disabled" href="#">Choose a Garden to Explore: </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link zones" href="#" active="1" loclink="all">All Gardens<span class="sr-only">(current)</span></a>
+                            <a class="nav-link zones active" href="#" active="1" loclink="all">All Gardens<span class="sr-only">(current)</span></a>
                         </li>
                         {% for zone in Zones %}
                             <li class="nav-item">
-                                <a class="nav-link zones" href="#" active="0" loclink="{{zone.name}}" {% if zone.name == "From Around The World, At Home!" %} style=' color: orange; ' {% endif %}>{{zone.name}}</a>
+                                <a class="nav-link zones" href="#" active="0" loclink="{{zone.name}}">{{zone.name}}</a>
                             </li>
                         {% endfor %}
                         <li class="nav-item">
-                            <a class="nav-link zones" href="#" active="0" loclink="From Around The World, At Home!" style=' color: orange; '>From Around The World, At Home!</a>
+                            <a class="nav-link zones" href="#" active="0" loclink="From Around The World, At Home!" style=' color: #e77e51; '>From Around The World, At Home!</a>
                         </li>
                     </ul>
                     <form class="d-flex">
