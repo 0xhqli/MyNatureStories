@@ -59,4 +59,5 @@ python manage.py runserver
 
 ## Authors
 [Hai Qi](https://github.com/0xhqli)  
+[Jill Hung](https://github.com/jilllhung)  
 [nick lantz](https://github.com/nicklantzATS)  
