@@ -57,4 +57,6 @@ python manage.py runserver
 - Blog page: Share Your Nature Stories  
 | <img src="https://github.com/jilllhung/MyNatureStories/blob/main/SnapShots/PhoneScreenshot%202021-06-20%20share%20your%20nature%20stories%201.png?raw=true" width="250">  | <img src="https://github.com/jilllhung/MyNatureStories/blob/main/SnapShots/PhoneScreenshot%202021-06-20%20share%20your%20nature%20stories%202.png?raw=true" width="250">  | <img src="https://github.com/jilllhung/MyNatureStories/blob/main/SnapShots/PhoneScreenshot%202021-06-20%20share%20your%20nature%20stories%203.png?raw=true" width="250"> |  
 
-## Authors and acknowledgment
+## Authors
+[Hai Qi](https://github.com/0xhqli)  
+[nick lantz](https://github.com/nicklantzATS)  
